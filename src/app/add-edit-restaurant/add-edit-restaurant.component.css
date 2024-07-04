@@ -1,0 +1,59 @@
+.right-align {
+  text-align: right;
+}
+
+input.right-align::-webkit-outer-spin-button,
+input.right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+mat-label {
+  display: block;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+}
+
+.back-button {
+  height: 40px;
+  width: 40px;
+}
+
+form {
+  margin-left: 40px;
+}
+
+.add-button {
+  background: #d7e3ff !important;
+  color: #005cbb !important;
+}
+
+.footer {
+  gap: 20px;
+  margin: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.image-preview {
+  width: 150px;
+  height: 150px;
+  margin: 100px 0 0 250px;
+}
+
+.view-preview {
+  padding-left: 30px;
+}

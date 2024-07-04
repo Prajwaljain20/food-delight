@@ -1,0 +1,15 @@
+<mat-toolbar class="topbar center mat-bg-card">
+  <div class="branding">
+    <h1>Foodie Delight</h1>
+  </div>
+  <div>
+    <mat-icon svgIcon="profile-icon" [matMenuTriggerFor]="menu"></mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Name</button>
+      <button mat-menu-item>Logout</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,80 @@
+<mat-icon svgIcon="back-icon" class="back-button" routerLink=""></mat-icon>
+<mat-card-header>
+  <h1>{{addEditView}}</h1>
+</mat-card-header>
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-content>
+    <div *ngIf="isViewMode" class="row view-preview">
+      <div>
+        <mat-label>Address</mat-label>
+        <p>{{restaurantDetail.address}}</p>
+        <mat-label>Category</mat-label>
+        <p>{{restaurantDetail.category}}</p>
+        <mat-label>Dishes</mat-label>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let list of restaurantDetail.dishes" >{{list}}</mat-list-item>
+        </mat-list>
+        <mat-label>Rating</mat-label>
+        <p>{{restaurantDetail.rating}}</p>
+        <mat-label>Cost</mat-label>
+        <p>{{restaurantDetail.cost}}</p>
+      </div>
+      <img #image [src]="restaurantDetail.image" class="image-preview">
+    </div>
+    <div class="row">
+<form [formGroup]="form" *ngIf="!isViewMode">
+  <mat-label>Restaurant Name</mat-label>
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Enter Restaurant Name" formControlName="name">
+    <mat-error>Restaurant Name is Required</mat-error>
+  </mat-form-field>
+  <mat-label>Image</mat-label>
+  <button type="button" mat-stroked-button class="uploadBtn" (click)="filePicker.click()">
+    Upload Image
+  </button>
+<input type="file" id="file" className="upload-document" hidden #filePicker
+  excludeAcceptAllOption="true" accept="image/*" (change)="onFileSelection($event)"/>
+  <span *ngIf="form.value.image.length > 0">{{imageFile.name}}</span>
+  <mat-error *ngIf="form.value.image.length === 0 && form.controls['image'].touched">Image is Required</mat-error>
+  <mat-label>Address</mat-label>
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Enter Address" formControlName="address">
+    <mat-error>Address is Required</mat-error>
+  </mat-form-field>
+  <mat-label>Category</mat-label>
+  <mat-form-field appearance="outline">
+    <mat-select name="food" placeholder="Select Category" formControlName="category" (selectionChange)="onCategoriesChange()">
+      <mat-option  *ngFor="let category of categories" [value]="category.name">{{category.name}}</mat-option>
+    </mat-select>
+    <mat-error>Category is Required</mat-error>
+  </mat-form-field>
+  <div>
+  <mat-label>Dishes</mat-label>
+  <mat-form-field appearance="outline">
+    <mat-select multiple placeholder="Select Dishes" formControlName="dishes">
+    <mat-option *ngFor="let dish of dishes.names" [value]="dish">{{dish}}</mat-option>
+    </mat-select>
+    <mat-error>Dishes is Required</mat-error>
+  </mat-form-field>
+  </div>
+  <mat-label>Cost</mat-label>
+  <mat-form-field appearance="outline">
+    <input matInput type="number" class="right-align" placeholder="0" formControlName="cost" />
+    <span matTextPrefix>₹&nbsp;</span>
+    <mat-error>Cost is Required</mat-error>
+  </mat-form-field>
+  <mat-label>Rating</mat-label>
+  <mat-slider min="0" max="5" step="0.1" discrete class="slider">
+    <input matSliderThumb formControlName="rating">
+  </mat-slider>
+</form>
+<div *ngIf="form.value.image.length > 0 && isEditMode">
+<img #image [src]="restaurantDetail.image" class="image-preview">
+</div>
+</div>
+</mat-card-content>
+<div class="footer" *ngIf="!isViewMode">
+  <button mat-raised-button class="cancel-button" routerLink="">Cancel</button>
+  <button mat-raised-button class="add-button" (click)="onSave()">{{isEditMode ? 'Update Restaurant' : 'Save Restaurant'}}</button>
+</div>
+</mat-card>

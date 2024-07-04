@@ -1,0 +1,41 @@
+[
+    {
+        "id": "1",
+        "name": "Rest",
+        "image": "",
+        "address": "hjhj",
+        "category": "chinese",
+        "rating": 4,
+        "cost": 200,
+        "dishes": [
+            "Noodles",
+            "Dumplings"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Rest1",
+        "image": "",
+        "address": "hjhjdcd",
+        "category": "indian",
+        "rating": 3,
+        "cost": 400,
+        "dishes": [
+            "Dal Makhani",
+            "Chapati"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Rest2",
+        "image": "",
+        "address": "derefrfr",
+        "category": "mutli-cuisine",
+        "rating": 5,
+        "cost": 300,
+        "dishes": [
+            "Noodles",
+            "Dumplings"
+        ]
+    }
+]

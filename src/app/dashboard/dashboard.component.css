@@ -1,0 +1,39 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+
+table {
+    width: 100%;
+}
+
+.add-button {
+    background: #d7e3ff !important;
+    color: #005cbb !important;
+}
+
+.mat-mdc-form-field {
+    margin: 20px 0 0 20px;
+    font-size: 14px;
+    width: 30%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.icon-td {
+    display: flex;
+    gap: 30px;
+}
+
+td {
+    cursor: pointer;
+}
+
+.action-column {
+    cursor: default;
+}
